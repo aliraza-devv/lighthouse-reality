@@ -1,0 +1,46 @@
+.searched__houses__card {
+    width: 31rem;
+    height: 27.9rem;
+    background: $color-grey-light-1;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    border-radius: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+        transition: all 0.6s;
+    }
+
+    &-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        &-price {
+            display: flex;
+            align-items: center;
+        }
+
+        &-address {
+            display: flex;
+            align-items: center;
+        }
+
+        &-buy {
+            display: flex;
+            align-items: center;
+        }
+
+        &-rooms {
+            align-self: flex-end;
+        }
+        &-img {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+        }
+    }
+}

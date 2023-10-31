@@ -1,0 +1,56 @@
+.InputDouble__search {
+    position: absolute;
+    top: 51%;
+    left: 51%;
+    transform: translateX(-54.5%);
+
+    display: flex;
+
+    @include respond(mobile) {
+        top: 46%;
+        left: 54%;
+    }
+
+    &-top-left {
+        position: absolute;
+        top: 3%;
+        left: 2%;
+
+        @include respond(phone) {
+            top: 7%;
+        }
+    }
+
+    &__input {
+        width: 30rem;
+        border: none;
+        border-radius: 1rem;
+        padding: 1.2rem;
+        outline: none;
+        display: inline-block;
+        margin-right: 1rem;
+        background: $color-grey-light-1;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+        position: relative;
+
+        @include respond(mobile) {
+            width: 25rem;
+        }
+
+        &--small {
+            width: 18rem;
+
+            @include respond(mobile) {
+                width: 8rem;
+            }
+        }
+
+        &--error {
+            border: 2px $color-red solid;
+        }
+
+        &::placeholder {
+            color: $color-grey-dark;
+        }
+    }
+}

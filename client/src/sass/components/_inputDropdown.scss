@@ -1,0 +1,119 @@
+.InputDropdown__search {
+    position: absolute;
+    top: 46%;
+    left: 53%;
+    text-align: center;
+    transform: translateX(-54.5%);
+
+    @include respond(phone) {
+        left: 60%;
+    }
+
+    &-top-left {
+        position: absolute;
+        top: 3%;
+        left: 6%;
+        text-align: center;
+
+        @include respond(tab-port-max) {
+            top: 5%;
+            left: 10%;
+        }
+
+        @include respond(phone) {
+            left: 14%;
+        }
+
+        @include respond(mobile) {
+            left: 18%;
+        }
+    }
+
+    &__input {
+        width: 60rem;
+        border: none;
+        border-radius: 1rem;
+        padding: 1.8rem;
+        outline: none;
+        display: block;
+        background: $color-grey-light-1;
+        box-shadow: 0 1rem 2rem rgba($color-black,.1);
+        position: relative;
+
+        &--error {
+            border: 2px $color-red solid;
+        }
+        
+        @include respond(phone-max) {
+            width: 50rem;
+        }
+
+        @include respond(phone) {
+            width: 40rem;
+            padding: 1.4rem;
+        }
+
+        @include respond(mobile) {
+            width: 30rem;
+        }
+
+        &::placeholder {
+            color: $color-grey-dark;
+
+            @include respond(phone) {
+                padding-left: 1rem;
+            }
+        }
+    }
+
+    &__options {
+        outline: none;
+        background: $color-grey-light-1;
+        color: $color-secondary;
+        border: .5px solid $color-secondary;
+        padding: 1rem;
+        box-shadow: 0 3rem 2rem -2rem rgba($color-black,.1);
+
+        @include respond(phone-max) {
+            padding: .6rem;
+            font-size: 1.4rem;
+        }
+
+        &-main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translate(-84%,-2%);
+            border-radius: 1rem 0 0 1rem;
+            padding-top: 1.8rem;
+            padding-bottom: 1.8rem;
+            padding-left: 1.8rem;
+
+            &--error {
+                border: 2px $color-red solid;
+            }
+
+            @include respond(phone) {
+                padding-top: 1.4rem;
+                padding-bottom: 1.4rem;
+                padding-left: 1.4rem;
+            }
+            
+        }
+    }
+
+    &--icon {
+        position: absolute;
+        top: 20%;
+        right: 1%;
+
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+
+        & svg {
+            width: 3rem;
+            height: 3rem;
+        }          
+    }
+}

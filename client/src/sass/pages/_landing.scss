@@ -1,0 +1,557 @@
+// Discover Section
+.discover {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(30rem, 1fr));
+    grid-auto-rows: 1fr;
+
+    @include respond(phone) {
+        display: none;
+    }
+
+    & .box {
+        position: relative;
+        width: 100%;
+        height: 30rem;
+        z-index: 199;
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backface-visibility: hidden;
+            transition: all 1.2s;
+        }
+
+        &:hover:after {
+            clip-path: polygon(50% 100%, 20% 0, 80% 0);
+            animation: tri 1.2s;
+        }
+
+        &__1 {
+            background: url('../../assets/image/family.jpeg') no-repeat center;
+            background-size: cover;
+        }
+
+        &__2 {
+            background: url('../../assets/image/apartment.jpg') no-repeat center;
+            background-size: cover;
+        }
+
+        &__3 {
+            background: url('../../assets/image/resort.jpeg') no-repeat top;
+            background-size: cover;
+        }
+
+        &__4 {
+            background: url('../../assets/image/glass-villa.jpeg') no-repeat center;
+            background-size: cover;
+        }
+
+        &__text {
+            position: absolute;
+            text-align: center;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s;
+            z-index: 200;
+            opacity: 1;
+        }
+
+        &__paragraph {
+            color: $color-primary;
+            font-size: 2.8rem;
+        }
+
+        &__heading {
+            font-family: $font-nunito;
+            font-size: 3rem;
+            color: $color-grey-light-1;
+
+            @include respond(tab-port) {
+                font-size: 2.8rem;
+            }
+
+            @include respond(tab-port-mini) {
+                font-size: 2.6rem;
+            }
+
+            @include respond(phone-max) {
+                font-size: 2.4rem;
+            }
+        }
+
+        &__tri {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: all 1.2s;
+            -webkit-transition: all 1.2s;
+        }
+
+        &__explore {
+            &__btn {
+                text-decoration: none;
+                color: $color-primary;
+                font-family: $font-nunito;
+                font-size: 2.2rem;
+                font-weight: bold;
+            }
+
+            & svg {
+                fill: $color-grey-light-1;
+                margin: 0 0.3rem;
+                width: 0.6rem;
+                height: 1.2rem;
+            }
+        }
+
+        &:hover {
+            .box__text {
+                top: 110%;
+                z-index: 198;
+                opacity: 0;
+            }
+
+            .box__tri {
+                top: 50%;
+                opacity: 1;
+                z-index: 201;
+            }
+        }
+    }
+}
+
+// Find Home Section
+.home {
+    position: relative;
+    background: $color-grey-light-1;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    & .svg-1 {
+        position: absolute;
+        top: 70%;
+        right: 0;
+
+        @include respond(tab-port-mini) {
+            display: none;
+        }
+    }
+
+    & .svg-2 {
+        position: absolute;
+        top: 0;
+        right: 30%;
+        transform: translateY(-2.2rem);
+        -webkit-transform: translateY(-2.2rem);
+
+        @include respond(tab-port-mini) {
+            display: none;
+        }
+    }
+
+    &__pictures {
+        background-color: $color-primary;
+        // background-image: linear-gradient(rgba($color-primary-dark, .5), rgba($color-primary-dark, .5)), url('../img/beach_back.jpg');
+        background-size: cover;
+
+        display: grid;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+        align-items: center;
+    }
+
+    &__content {
+        padding: 6rem 10vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &__img--1 {
+        width: 100%;
+        grid-row: 1/6;
+        grid-column: 2/6;
+        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+    }
+
+    &__img--2 {
+        width: 115%;
+        grid-row: 2/6;
+        grid-column: 4/7;
+        z-index: 20;
+        box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+    }
+
+    &__heading {
+        font-size: 4rem;
+        color: $color-primary;
+        line-height: 4.7rem;
+        margin-bottom: 2rem;
+
+        @include respond(phone) {
+            font-size: 3rem;
+        }
+    }
+
+    &__text {
+        color: $color-primary-dark;
+        font-family: $font-nunito;
+        font-size: 1.5rem;
+        line-height: 1.8;
+        text-align: left;
+        margin-bottom: 1.6rem;
+
+        @include respond(phone) {
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.container {
+    background: grey;
+    // height: 120rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 20rem);
+
+    & .services {
+        background: $color-grey-light-1;
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 3;
+
+        text-align: center;
+
+        @include respond(mobile) {
+            grid-column: 1 / span end;
+        }
+
+        &__heading {
+            margin-top: 1.6rem;
+            margin-bottom: 2.4rem;
+            color: $color-primary;
+            font-size: 4rem;
+        }
+
+        &__container {
+            padding: 0 9rem;
+            padding-bottom: 1.2rem;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 24rem);
+
+            grid-row-gap: 2.5rem;
+            grid-column-gap: 26rem;
+
+            @include respond(tab-land-min) {
+                padding: 0 1.4rem;
+            }
+
+            @include respond(tab-port-max) {
+                grid-column-gap: 22rem;
+            }
+
+            @include respond(tab-port-mini-x) {
+                grid-column-gap: 18rem;
+            }
+
+            @include respond(tab-port-mini) {
+                grid-column-gap: 14rem;
+            }
+
+            @include respond(phone-max) {
+                grid-column-gap: 10rem;
+            }
+
+            @include respond(phone) {
+                grid-column-gap: 4rem;
+                padding: 0 2rem;
+            }
+
+            &__card {
+                width: 23rem;
+                border-radius: 1.5rem;
+                background: $color-grey-light-1;
+                box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+                text-align: center;
+                padding: 0.2rem;
+                z-index: 300;
+                transition: all 0.6s;
+                -webkit-transition: all 0.6s;
+
+                @include respond(phone) {
+                    width: 19rem;
+                }
+
+                & svg {
+                    margin-top: 1.4rem;
+
+                    @include respond(phone) {
+                        width: 6rem;
+                        margin-top: 0.6rem;
+                    }
+                }
+
+                &__heading {
+                    color: $color-primary-dark;
+                    font-size: 2.4rem;
+
+                    @include respond(phone) {
+                        font-size: 2.2rem;
+                    }
+                }
+
+                &__text {
+                    color: $color-secondary;
+                    font-family: $font-nunito;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+
+                    @include respond(phone) {
+                        font-size: 1rem;
+                    }
+                }
+
+                &:hover {
+                    transform: translateY(-0.8rem);
+                    -webkit-transform: translateY(-0.8rem);
+                    box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+                    -webkit-box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+                }
+            }
+
+            &__card:nth-child(even) {
+                & svg {
+                    margin-top: 1rem;
+
+                    @include respond(phone) {
+                        margin-top: 0.8rem;
+                    }
+                }
+            }
+
+            &__card:nth-child(odd) {
+                & .services__container__card__text {
+                    @include respond(phone) {
+                        margin-bottom: 0.9rem;
+                    }
+                }
+            }
+        }
+    }
+
+    & .realtors {
+        background: $color-secondary;
+
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+        grid-row-gap: 2rem;
+
+        @include respond(mobile) {
+            display: none;
+        }
+
+        &__heading {
+            color: $color-primary-dark;
+            font-size: 3rem;
+
+            @include respond(phone) {
+                font-size: 2.5rem;
+            }
+        }
+
+        &__list {
+            display: grid;
+            grid-template-columns: min-content max-content;
+            grid-column-gap: 2rem;
+            grid-row-gap: 5vh;
+            align-items: center;
+
+            @include respond(tab-land-min) {
+                grid-row-gap: 2.8vh;
+            }
+        }
+
+        &__img {
+            width: 9rem;
+            border-radius: 50%;
+            display: block;
+
+            @include respond(phone) {
+                width: 7rem;
+            }
+        }
+
+        &__sold {
+            text-transform: uppercase;
+            color: $color-grey-light-1;
+            opacity: 0.7;
+            margin-top: -3px;
+        }
+
+        &__details__heading {
+            font-size: 2.3rem;
+            color: $color-grey-light-1;
+
+            @include respond(phone) {
+                font-size: 2rem;
+            }
+        }
+
+        grid-row: 1 / span 3;
+    }
+
+    & .clients {
+        position: relative;
+        background: $color-grey-light-1;
+
+        grid-column: 1 / end;
+        grid-row: 4 / end;
+
+        & .svg-left {
+            position: absolute;
+            top: 0;
+            transform: translateY(-56%);
+        }
+
+        & .svg-down {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translateY(0.7rem);
+
+            @include respond(phone) {
+                right: 10%;
+                transform: translateY(21.2%);
+            }
+
+            @include respond(mobile) {
+                display: none;
+            }
+
+            & svg {
+                @include respond(phone) {
+                    width: 60rem;
+                }
+            }
+        }
+
+        &__heading {
+            color: $color-primary-dark;
+            font-size: 4rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+
+        &__svg-bg {
+            @include respond(phone) {
+                width: 26rem;
+            }
+        }
+    }
+}
+
+.story {
+    width: 75%;
+    margin: 0 auto;
+    box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+    background-color: $color-grey-light-1;
+    border-radius: 3px;
+    padding: 6rem;
+    padding-left: 9rem;
+    font-size: 1.6rem;
+    transform: skewX(-12deg);
+    margin-top: 6rem;
+    color: $color-primary;
+
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
+    }
+
+    @include respond(phone) {
+        transform: skewX(0);
+    }
+
+    &__shape {
+        width: 15rem;
+        height: 15rem;
+        float: left;
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+
+        @include respond(phone) {
+            transform: translateX(-3rem) skewX(0);
+        }
+
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            border-radius: none;
+        }
+    }
+
+    &__img {
+        height: 100%;
+        transform: translateX(-1rem) scale(1.2);
+        backface-visibility: hidden;
+        transition: all 0.5s;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+
+        & p {
+            font-family: $font-nunito;
+            color: $color-secondary;
+        }
+
+        @include respond(phone) {
+            transform: skewX(0);
+        }
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-grey-light-1;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all 0.5s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translateX(-2rem) scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+}

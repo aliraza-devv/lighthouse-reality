@@ -1,0 +1,26 @@
+.img-slider {
+    // width: 100%;
+    display: flex;
+
+    & > * {
+        margin-left: 6px;
+        margin-right: 6px;
+        margin-top: 3rem;
+    }
+
+    & .house_interior {
+        width: 16rem;
+        background-size: cover;
+        background-position: center;
+        cursor: pointer;
+
+        &:hover {
+            box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+            transition: box-shadow 0.5s;
+        }
+
+        &--selected {
+            border: 4px solid $color-primary;
+        }
+    }
+}

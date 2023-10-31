@@ -1,0 +1,143 @@
+.navbar__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.2rem;
+
+    &__text {
+        color: $color-grey-light-1;
+        font-size: 2rem;
+        text-decoration: none;
+        margin-left: 0.4rem;
+        transition: 0.3s all;
+        cursor: pointer;
+
+        &:hover {
+            color: $color-primary;
+        }
+
+        @include respond(tab-port) {
+            font-size: 1.8rem;
+        }
+
+        @include respond(tab-port-mini) {
+            font-size: 1.6rem;
+        }
+
+        @include respond(phone) {
+            font-size: 1.2rem;
+        }
+
+        @include respond(mobile) {
+            font-size: 1rem;
+        }
+
+        @include respond(mobile-x) {
+            font-size: 0.8rem;
+        }
+    }
+
+    &__left {
+        display: inline;
+        margin-left: 0.8rem;
+
+        & .navbar__links__box {
+            margin-right: 2.2rem;
+
+            @include respond(mobile) {
+                margin-right: 1rem;
+            }
+
+            @include respond(mobile-x) {
+                margin-right: 0.6rem;
+            }
+        }
+    }
+
+    &__right {
+        display: inline;
+
+        &--login {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 4px;
+        }
+    }
+
+    &__box {
+        display: inline-flex;
+        align-items: baseline;
+        margin-right: 1.7rem;
+
+        @include respond(mobile) {
+            margin-right: 0.8rem;
+        }
+
+        @include respond(mobile-x) {
+            margin-right: 0.3rem;
+        }
+    }
+
+    &__logo {
+        height: 9rem;
+        padding-left: 2rem;
+
+        @include respond(tab-land) {
+            height: 8rem;
+            padding-left: 1rem;
+        }
+
+        @include respond(tab-port-mini) {
+            height: 8rem;
+            padding-left: 0.8rem;
+        }
+
+        @include respond(phone-max) {
+            height: 7rem;
+        }
+
+        @include respond(phone) {
+            height: 6.5rem;
+        }
+
+        @include respond(mobile) {
+            height: 5rem;
+        }
+
+        @include respond(mobile-x) {
+            height: 4rem;
+        }
+    }
+
+    &__icon {
+        fill: $color-primary;
+        width: 1.9rem;
+        height: 1.9rem;
+
+        @include respond(tab-port) {
+            width: 1.7rem;
+            height: 1.7rem;
+        }
+
+        @include respond(mobile) {
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+
+        @include respond(mobile-x) {
+            width: 0.9rem;
+            height: 0.9rem;
+        }
+    }
+
+    &--user-image {
+        height: 5rem;
+        width: 5rem;
+        border-radius: 50%;
+    }
+
+    &--active {
+        color: $color-primary;
+    }
+}

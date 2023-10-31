@@ -1,0 +1,165 @@
+.footer {
+    width: 100%;
+    height: 30rem;
+    background: $color-secondary;
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(5,1fr);
+
+    &__heading {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: $color-primary;
+
+        @include respond(phone) {
+            font-size: 1.4rem;
+        }
+
+        @include respond(mobile) {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+    }
+
+    &__links {
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        &__text {
+            text-decoration: none;
+            color: $color-grey-dark;
+            font-size: 1.6rem;
+            display: inline;
+            transition: all .4s;
+
+            @include respond(phone) {
+                font-size: 1.4rem;
+            }
+
+            &:hover {
+                color: $color-grey-light-1;
+            }
+        }
+    }
+
+    &__contact {
+        display: flex;
+        align-items: center;
+        margin: .8rem 0;
+    }
+
+    &__input {
+        width: 80%;
+        padding: 1rem;
+        border: .5px solid $color-grey-dark;
+        border-radius: 1.8rem;
+        outline: none;
+        overflow:hidden;
+
+        @include respond(phone) {
+           font-size: 1rem;
+        }
+
+        &::placeholder {
+            color: $color-grey-dark;
+            font-family: $font-nunito;
+
+        }
+    }
+
+    &__seenon-text {
+        display: grid;
+        grid-template-columns: 1fr max-content 1fr;
+        grid-column-gap: 1.5rem;
+        align-items: center;
+
+        font-size: 1.6rem;
+        color: $color-grey-dark;
+
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            display: block;
+            background-color: currentColor;
+        }
+    }
+
+    &__seenon-logos {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2,1fr);
+        grid-row-gap: 6rem;
+        justify-items: start;
+        align-items: center;
+
+        & img {
+            max-height: 2.5rem;
+            max-width: 100%;
+            filter: brightness(70%);
+        }
+    }
+
+    &__logo {
+        width: 10rem;
+
+        @include respond(phone) {
+            width: 8rem;
+         }
+
+    }
+
+    &__left {
+        padding: 1rem;
+        grid-column: 1 / 2;
+        grid-row: 1 / span 4;
+
+        @include respond(mobile) {
+            grid-column: 1 / 3;
+        }
+    }
+
+    &__center {
+        grid-column: 2 / 4;
+        grid-row: 1 / span 4;
+
+        text-align: center;
+
+        @include respond(mobile) {
+            display: none;
+        }
+    }
+
+    &__right {
+
+        grid-column: 4 / end;
+        grid-row: 1 / span 4;
+
+        text-align: center;
+        padding-left: 2rem;
+
+        @include respond(mobile) {
+            grid-column: 3 / end;
+        }
+    }
+
+    &__last{
+        border-top: 1px solid $color-grey-dark;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: relative;
+
+        & p {
+            position: absolute;
+            right: 0;
+        }
+
+        grid-row: 5 / end;
+        grid-column: 1 / span end;
+    }
+}

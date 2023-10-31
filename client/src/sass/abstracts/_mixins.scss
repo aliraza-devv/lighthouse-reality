@@ -1,0 +1,109 @@
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+ORDER: Base + typography > general layout + grid > page layout > components
+1em = 16px
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == mobile-x {
+        @media (max-width: 23.4375em) {
+            // 375px - em is the best option to use in media queries
+            @content;
+        }
+    }
+
+    @if $breakpoint == mobile {
+        @media (max-width: 25.875em) {
+            // 414px
+            @content;
+        }
+    }
+
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) {
+            // 600px
+            @content;
+        }
+    }
+
+    @if $breakpoint == phone-max {
+        @media (max-width: 43.75em) {
+            // 700px
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-port-mini {
+        @media (max-width: 50em) {
+            // 800px
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-port-mini-x {
+        @media (max-width: 52.18em) {
+            // 835px
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) {
+            // 900px
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-port-max {
+        @media (max-width: 63.75em) {
+            // 1020px
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-land-min {
+        @media (max-width: 69.37em) {
+            // 1110px
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-land {
+        @media (max-width: 76.9em) {
+            // 1230px
+            @content;
+        }
+    }
+
+    @if $breakpoint == desktop {
+        @media (min-width: 87.5em) {
+            // 1400px
+            @content;
+        }
+    }
+
+    @if $breakpoint == big-desktop {
+        @media (min-width: 100em) {
+            // 1600px
+            @content;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.sell {
+    &__hire__realtors {
+        background: $color-grey-light-1;
+        width: 100%;
+        // height: 95vh;
+        text-align: center;
+        color: $color-primary;
+
+        @include respond(phone) {
+            height: 80vh;
+        }
+
+        @include respond(mobile) {
+            height: 60vh;
+        }
+
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &--left {
+                text-align: left;
+                margin-left: 3rem;
+            }
+
+            & img {
+                width: 50%;
+
+                @include respond(mobile) {
+                    display: none;
+                }
+            }
+        }
+    }
+}

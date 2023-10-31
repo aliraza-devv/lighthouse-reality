@@ -1,0 +1,42 @@
+.Simple__search {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-54.5%);
+
+    @include respond(phone) {
+        top: 40%;
+    }
+
+    @include respond(mobile) {
+        top: 35%;
+    }
+
+    & button {
+        margin-top: 2rem;
+    }
+
+    &__input {
+        width: 60rem;
+        border: none;
+        border-radius: 1rem;
+        padding: 1.5rem;
+        outline: none;
+        display: block;
+        background: $color-grey-light-1;
+        box-shadow: 0 1rem 2rem rgba($color-black,.1);
+
+        @include respond(phone) {
+            width: 50rem;
+        }
+
+        @include respond(mobile) {
+            width: 35rem;
+        }
+
+        &::placeholder {
+            color: $color-grey-dark;
+        }
+    }
+}

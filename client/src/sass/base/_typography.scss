@@ -1,0 +1,150 @@
+body {
+    font-family: $font-josef;
+    font-weight: 400;
+    /*font-size: 16px;*/
+    line-height: 1.7;
+    color: $color-grey-light-1;
+}
+
+.heading-big {
+    font-size: 4rem;
+    color: $color-primary-dark !important;
+    padding-top: 1rem;
+    font-weight: bold;
+
+    @include respond(phone) {
+        font-size: 2.8rem;
+    }
+
+    @include respond(mobile) {
+        font-size: 2.6rem;
+    }
+
+    @include respond(tab-port-mini) {
+        font-size: 3.5rem;
+    }
+
+    @include respond(tab-port-max) {
+        font-size: 3.6rem;
+    }
+
+    @include respond(tab-port-mini-x) {
+        font-size: 3rem;
+    }
+}
+
+.heading-medium {
+    font-size: 3rem;
+    color: $color-primary-dark !important;
+
+    @include respond(phone) {
+        font-size: 2rem;
+    }
+}
+
+.heading-small {
+    font-size: 2.4rem;
+    color: $color-primary-dark !important;
+}
+
+.heading-mini {
+    font-size: 1.8rem;
+    color: $color-primary-dark !important;
+}
+
+.paragraph {
+    font-family: $font-nunito;
+    font-size: 1.6rem;
+}
+
+.paragraph-primary {
+    color: $color-primary;
+}
+
+.paragraph-primary-dark {
+    color: $color-primary-dark;
+}
+
+.para-secondary {
+    color: $color-secondary;
+    font-size: 1.5rem;
+    font-family: $font-nunito;
+    text-transform: capitalize;
+
+    &-j {
+        font-family: $font-josef;
+    }
+}
+
+.para-fade {
+    opacity: 0.8;
+}
+
+.para-secondary-bold {
+    color: $color-secondary;
+    font-weight: bold;
+    font-size: 2.4rem;
+}
+
+.paragraph-medium {
+    font-family: $font-nunito;
+    font-size: 1.8rem;
+
+    @include respond(mobile) {
+        font-size: 1.6rem;
+    }
+}
+
+.paragraph-small {
+    font-family: $font-nunito;
+    font-size: 1.2rem;
+
+    &-m {
+        font-family: $font-nunito;
+        font-size: 1.4rem;
+    }
+}
+
+.para-with-icon {
+    display: flex;
+    align-items: center;
+}
+
+.para-disable {
+    @include respond(tab-port-max) {
+        display: none;
+    }
+}
+
+.span-text {
+    color: $color-primary;
+    font-family: $font-nunito;
+    font-size: 1.6rem;
+}
+
+.terms-text {
+    color: $color-grey-dark;
+    font-size: 1.6rem;
+    display: inline;
+    margin-left: 6px;
+
+    & a {
+        text-decoration: none;
+        font-weight: bold;
+        color: $color-grey-dark;
+    }
+}
+
+.links-primary {
+    color: $color-primary-dark !important;
+
+    &:hover {
+        color: $color-primary !important;
+    }
+}
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}

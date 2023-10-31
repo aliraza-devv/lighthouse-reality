@@ -1,0 +1,37 @@
+.buy {
+
+    &__best-places {
+        position: relative;
+        background: $color-grey-light-1;
+        width: 100%;
+        height: 95vh;
+        text-align: center;
+        color: $color-primary;
+
+        @include respond(tab-port-mini-x) {
+            height: 70vh;
+        }
+
+        &__content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &--left {
+                text-align: left;
+                margin-left: 3rem;
+            }
+        }
+    }
+}
+
+.main-img {
+
+    @include respond(tab-port-mini-x) {
+        width: 40rem;
+    }
+
+    @include respond(phone) {
+        display: none;
+    }
+}

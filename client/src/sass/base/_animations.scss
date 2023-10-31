@@ -1,0 +1,9 @@
+@keyframes tri {
+    0% {
+        clip-path: polygon(50% 2%, 20% 0, 80% 0);
+    }
+
+    100% {
+        clip-path: polygon(50% 100%, 20% 0, 80% 0);
+    }
+}
